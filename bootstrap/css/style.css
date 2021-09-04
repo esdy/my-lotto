@@ -1,0 +1,12 @@
+body{
+	margin: 200px 400px 100px 400px;
+	padding: auto;
+	background-color: #535e63;
+	color: #000;
+	text-align: center;
+}
+
+.row{
+	background-color: #fff;
+	padding: 2em;
+}
