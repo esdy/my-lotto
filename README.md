@@ -1,1 +1,1 @@
-Lotto number generator!
+https://esdy.github.io/my-lotto/
