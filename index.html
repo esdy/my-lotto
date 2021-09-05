@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<!-- Bootstrap -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap-social.css" rel="stylesheet">
+<link href="bootstrap/css/font-awesome.css" rel="stylesheet">
+<link href="bootstrap/css/style.css" rel="stylesheet">
+<title>Random Number Generator:: myLotto</title>
+
+<body>
+	<div class="row">
+		<span> Hit Win </span> to generate new numbers! </br>
+		<p>&nbsp;</p>
+		<h2 id="win">
+
+		</h2>
+		<p>&nbsp;</p>
+		<button class="btn btn-sm btn-primary" type="button" onClick="generate()">Win </button>
+		<p>&nbsp;</p>
+
+		By Esdy Wanjala </br>
+		Web Developer and Content Manager, <a href="http://dwanjala.com" target="new">D. Wanjala</a> </br>
+		(+254) 724 486 915 / 784 486 915
+	</div>
+	<script>
+		// get range of allowed numbers
+		const range = (start, end) => {
+			let allowedNumbers = []
+			for (let i = start; i <= end; i++) {
+				allowedNumbers.push(i)
+			}
+			return allowedNumbers
+		}
+
+		//shuffle the numbers
+		const shuffle = (arr) => {
+			arr.sort(() => Math.random() - 0.5)
+		}
+
+		//generate numbers
+		const generate = () => {
+			let rangeNumbers = range(1, 49)
+			shuffle(rangeNumbers)
+			let winningNumbers = []
+			for (let i = 0; i < 6; i++) {
+				winningNumbers.push(rangeNumbers[i])
+
+			}
+			document.getElementById("win").innerHTML = winningNumbers + " #" + Math.floor(Math.random() * 10);
+		}
+	</script>
+</body>
+
+</html>
